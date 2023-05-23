@@ -21,6 +21,36 @@ class Config{
         $this->dbCnx = new PDO(DB_TYPE.":host=".DB_HOST.";dbname=".DB_NAME, DB_USER,DB_PWD, [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]); //
     }
 
+    //MÉTODOS
+
+    public function setId($id){
+        $this->id = $id;
+    }
+    public function getId($id){
+        return $this-> id;
+    }
+
+    public function setNombres($nombres){
+        $this->nombres = $nombres;
+    }
+    public function getNombres(){
+        return $this-> nombres;
+    }
+
+    public function setDireccion($direccion){
+        $this->direccion = $direccion;
+    }
+    public function getDireccion(){
+        return $this-> direccion;
+    }
+
+    public function setLogros($logros){
+        $this->logros = $logros;
+    }
+    public function getLogros(){
+        return $this-> logros;
+    }
+    
 }
 
 
