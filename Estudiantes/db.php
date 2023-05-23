@@ -2,23 +2,23 @@
 
 <?php
 if(!defined("DB_TYPE")){ // SI LA BD NO EXISTE, LA CREA
-    defined("DB_TYPE", "mysql"); //TIPO DE LA BASE DE DATOS
+    define("DB_TYPE", "mysql"); //TIPO DE LA BASE DE DATOS
 }
 
-if(!define("DB_HOST")){
+if(!defined("DB_HOST")){
     define("DB_HOST", "localhost");
 }
 
-if(!define("DB_NAME")){
+if(!defined("DB_NAME")){
     define("DB_NAME", "campus");
 }
 
-if(!define("DB_USER")){
-    define("DB_USER", "camper");
+if(!defined("DB_USER")){
+    define("DB_USER", "campus");
 }
 
-if(!define("DB_PWD")){
-    define("DB_PWD", "camper2023");
+if(!defined("DB_PWD")){
+    define("DB_PWD", "campus2023");
 }
 
 ?>
