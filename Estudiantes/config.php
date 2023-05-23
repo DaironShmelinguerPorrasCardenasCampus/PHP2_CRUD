@@ -53,7 +53,7 @@ class Config{
 
     public function insertData(){
         try {
-            $stm = $this -> dbCnx -> prepare("INSERT INTO campers(nombres,direccion,logros) values(?,?,?)") ;// método para inserytar datos en la database - tabla campers
+            $stm = $this -> dbCnx -> prepare("INSERT INTO campers(nombres,direccion,logros) values(?,?,?)");// método para inserytar datos en la database - tabla campers
             $stm -> execute([$this->nombres , $this->direccion, $this->logros]);//
         } catch (Exception $e) {
             return $e->getMessage();
