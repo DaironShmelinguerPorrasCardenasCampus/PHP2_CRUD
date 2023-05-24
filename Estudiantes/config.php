@@ -71,6 +71,17 @@ class Config{
             return $e->getMessage();
         }
     }
+    //ELIMINAR
+    public function delete(){
+        try {
+            $stm = $this-> dbCnx -> prepare("DELETE FROM campers WHERE  id = ?");
+            $stm-> execute([$this->id]);
+            return $stm-> fetchAll();
+            echo "<script>alert('USUARIO BORRADO EXITOSAMENTE DE LA DATABASE');document.location='estudiantes.php'</script>";
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
     
 }
 
