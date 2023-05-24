@@ -1,3 +1,16 @@
+<?php
+
+require_once("config.php"); //TRAEMOS LA CLASE
+$data = new Config(); //INSTACIAMOS LA CLASE EN UNA VARIABLE NUEVA
+
+//VARIABLE QUE GUARDA TODOS LOS DATOS O REGISTROS
+$all = $data->selectAll();
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -59,14 +72,25 @@
               <th scope="col">DETALLE</th>
             </tr>
           </thead>
-          <tbody class="" id="tabla">
+          <tbody class="" id="tabla"> <!-- AQUÍ ES DONDE TRAEMOS LOS DATOS REGISTRADOS EN LA BASE DE DATOS -->
 
             <!-- ///////Llenado DInamico desde la Base de Datos -->
-         
-       
+            <?php
+            //RECORREMOS LA VARIABLE ALL CON UN FOREACH
+            foreach($all as $key => $val){
+
+            ?>
+            <tr>
+              <td> <?php echo $val['id']?></td>
+              <td> <?php echo $val['nombres']?></td>
+              <td> <?php echo $val['direccion']?></td>
+              <td> <?php echo $val['logros']?></td>
+              <!-- incluimos el btn para elimiar -->
+              <td> <a class="btn btn-danger" href="borrasEstudiantes.php">BORRAR</a></td>
+            <tr>
 
           </tbody>
-        
+            <?php }?>
         </table>
 
       </div>
