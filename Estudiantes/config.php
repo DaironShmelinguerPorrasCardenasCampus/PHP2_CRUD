@@ -50,7 +50,7 @@ class Config{
     public function getLogros(){
         return $this-> logros;
     }
-
+    //INSERTAR
     public function insertData(){
         try {
             $stm = $this -> dbCnx -> prepare("INSERT INTO campers(nombres,direccion,logros) values(?,?,?)");// método para inserytar datos en la database - tabla campers
@@ -60,6 +60,16 @@ class Config{
         }
        
     
+    }
+    //SELECCIONAR - RECUPERACIÓN DE FILAS DE LA BASE DE DATOS
+    public function selectAll(){ 
+        try {
+            $stm = $this-> dbCnx -> prepare("SELECT * FROM campers");
+            $stm-> execute();
+            return $stm-> fetchAll();//recurso de PDO
+        } catch (Exception  $e) {
+            return $e->getMessage();
+        }
     }
     
 }
