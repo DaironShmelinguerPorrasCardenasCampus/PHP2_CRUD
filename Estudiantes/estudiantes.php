@@ -86,7 +86,7 @@ $all = $data->selectAll();
               <td> <?php echo $val['direccion']?></td>
               <td> <?php echo $val['logros']?></td>
               <!-- incluimos el btn para elimiar -->
-              <td> <a class="btn btn-danger" href="borrasEstudiantes.php">BORRAR</a></td>
+              <td> <a class="btn btn-danger" href="borrasEstudiantes.php?id=<?=$val['id']?>&req=delete">BORRAR</a></td> <!-- val tiene los valores -->
             <tr>
 
           </tbody>
